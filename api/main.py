@@ -8,6 +8,10 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
 def fit_ellipse_equation(ellipse):
     (x_center, y_center), (major_axis, minor_axis), angle = ellipse
     angle_rad = np.radians(angle)
@@ -28,7 +32,7 @@ def fit_ellipse_area(ellipse):
     area = np.pi * (major_axis / 2) * (minor_axis / 2)
     return area
 
-@app.route("/api/edgedetection/", methods=["POST"])
+@app.route("/api/edgedetection", methods=["POST"])
 def analyze_blood_image():
     if 'image' not in request.files:
         return jsonify({"error": "No image provided"}), 400

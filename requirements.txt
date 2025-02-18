@@ -1,5 +1,5 @@
-flask
-flask-cors
-numpy
-opencv-python-headless
-pillow
+Flask==3.1.0
+Flask_Cors==5.0.0
+numpy==2.2.3
+opencv_python_headless==4.11.0.86
+Pillow==11.1.0
