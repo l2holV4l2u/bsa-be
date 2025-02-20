@@ -32,6 +32,10 @@ def fit_ellipse_area(ellipse):
     area = np.pi * (major_axis / 2) * (minor_axis / 2)
     return area
 
+@app.route("/api/edgedetection", methods=["GET"])
+def confirm_endpoint():
+    return 'Endpoint Confirmed!'
+
 @app.route("/api/edgedetection", methods=["POST"])
 def analyze_blood_image():
     if 'image' not in request.files:
